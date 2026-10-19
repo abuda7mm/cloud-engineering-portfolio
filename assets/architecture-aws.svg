@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" role="img" aria-label="AWS two availability zones with public ALB and private EC2 Auto Scaling instances">
+ <defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1428"/><stop offset="1" stop-color="#101b37"/></linearGradient>
+  <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#7182b4" stroke-opacity=".085"/></pattern>
+  <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#51dcca" stroke-width="1.5"/></marker>
+  <filter id="glow"><feGaussianBlur stdDeviation="18"/></filter>
+  <style>.title{font:700 24px system-ui,Segoe UI,sans-serif;fill:#f0f5ff}.h{font:650 18px system-ui,Segoe UI,sans-serif;fill:#e8efff}.t{font:500 15px system-ui,Segoe UI,sans-serif;fill:#afbeda}.tiny{font:600 13px system-ui,Segoe UI,sans-serif;fill:#8295b8;letter-spacing:1px}.b{fill:#111f39;stroke:#344c72;stroke-width:1.6}.lane{fill:#132442;stroke:#415a7f;stroke-width:1.6;stroke-dasharray:6 5}.line{fill:none;stroke:#51dcca;stroke-width:2.8;stroke-linejoin:round;marker-end:url(#arrow)}.edge{fill:none;stroke:#536c99;stroke-width:2}.num{font:700 15px system-ui,Segoe UI,sans-serif;fill:#51dcca}</style>
+ </defs>
+ <rect width="1200" height="660" rx="24" fill="url(#bg)"/>
+ <rect width="1200" height="660" rx="24" fill="url(#grid)"/>
+ <circle cx="960" cy="140" r="170" fill="#51dcca" opacity=".09" filter="url(#glow)"/>
+
+ <text x="66" y="60" class="tiny">PROJECT 01  /  AWS INFRASTRUCTURE</text>
+ <text x="66" y="98" class="title">High-Availability Web Architecture</text>
+ <rect x="70" y="124" width="1060" height="474" rx="20" class="lane"/>
+ <text x="100" y="158" class="tiny">VPC   10.20.0.0/16   ·   2 AVAILABILITY ZONES</text>
+ <rect x="404" y="170" width="390" height="75" rx="15" class="b"/>
+ <text x="600" y="200" class="h" text-anchor="middle">Application Load Balancer</text>
+ <text x="600" y="225" class="t" text-anchor="middle">Public entry · HTTP listener · Target group</text>
+ <rect x="110" y="300" width="460" height="215" rx="18" class="lane"/>
+ <rect x="630" y="300" width="460" height="215" rx="18" class="lane"/>
+ <text x="140" y="334" class="num">AZ 01</text><text x="660" y="334" class="num">AZ 02</text>
+ <rect x="140" y="360" width="400" height="50" rx="12" class="b"/>
+ <text x="340" y="390" class="t" text-anchor="middle">Public subnet  ·  ALB interface</text>
+ <rect x="660" y="360" width="400" height="50" rx="12" class="b"/>
+ <text x="860" y="390" class="t" text-anchor="middle">Public subnet  ·  ALB interface</text>
+ <rect x="140" y="426" width="400" height="58" rx="12" fill="#123e4b" stroke="#408d91" stroke-width="1.5"/>
+ <text x="340" y="453" class="h" text-anchor="middle">Private EC2 instance</text>
+ <text x="340" y="473" class="t" text-anchor="middle">Application :8080</text>
+ <rect x="660" y="426" width="400" height="58" rx="12" fill="#123e4b" stroke="#408d91" stroke-width="1.5"/>
+ <text x="860" y="453" class="h" text-anchor="middle">Private EC2 instance</text>
+ <text x="860" y="473" class="t" text-anchor="middle">Application :8080</text>
+ <path d="M510 245V275H340V351" class="line"/>
+ <path d="M690 245V275H860V351" class="line"/>
+ <path d="M340 412V422M860 412V422" class="line"/>
+ <rect x="336" y="538" width="528" height="38" rx="12" fill="#152f3e" stroke="#2c7b80"/>
+ <text x="600" y="562" class="t" text-anchor="middle">Auto Scaling Group   ·   Health checks   ·   CloudWatch</text>
+ <rect x="483" y="115" width="234" height="29" rx="15" fill="#174239" stroke="#36a697"/>
+ <text x="600" y="134" class="t" text-anchor="middle">Inbound client requests ↓</text>
+
+ </svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" role="img" aria-label="GitHub to GitHub Actions to Helm to Kubernetes two replica pods and service">
+ <defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1428"/><stop offset="1" stop-color="#101b37"/></linearGradient>
+  <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#7182b4" stroke-opacity=".085"/></pattern>
+  <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#8f9dff" stroke-width="1.5"/></marker>
+  <filter id="glow"><feGaussianBlur stdDeviation="18"/></filter>
+  <style>.title{font:700 24px system-ui,Segoe UI,sans-serif;fill:#f0f5ff}.h{font:650 18px system-ui,Segoe UI,sans-serif;fill:#e8efff}.t{font:500 15px system-ui,Segoe UI,sans-serif;fill:#afbeda}.tiny{font:600 13px system-ui,Segoe UI,sans-serif;fill:#8295b8;letter-spacing:1px}.b{fill:#111f39;stroke:#344c72;stroke-width:1.6}.lane{fill:#132442;stroke:#415a7f;stroke-width:1.6;stroke-dasharray:6 5}.line{fill:none;stroke:#8f9dff;stroke-width:2.8;stroke-linejoin:round;marker-end:url(#arrow)}.edge{fill:none;stroke:#536c99;stroke-width:2}.num{font:700 15px system-ui,Segoe UI,sans-serif;fill:#8f9dff}</style>
+ </defs>
+ <rect width="1200" height="660" rx="24" fill="url(#bg)"/>
+ <rect width="1200" height="660" rx="24" fill="url(#grid)"/>
+ <circle cx="960" cy="140" r="170" fill="#8f9dff" opacity=".09" filter="url(#glow)"/>
+
+ <text x="64" y="62" class="tiny">PROJECT 02  /  DELIVERY ENGINEERING</text>
+ <text x="64" y="100" class="title">Code to Cluster · CI/CD Pipeline</text>
+ <rect x="68" y="165" width="220" height="134" rx="20" class="b"/>
+ <text x="178" y="205" text-anchor="middle" class="tiny">SOURCE</text><text x="178" y="246" text-anchor="middle" class="h">GitHub Repository</text><text x="178" y="275" text-anchor="middle" class="t">Push / Pull Request</text>
+ <rect x="356" y="165" width="220" height="134" rx="20" class="b"/>
+ <text x="466" y="205" text-anchor="middle" class="tiny">CONTINUOUS INTEGRATION</text><text x="466" y="246" text-anchor="middle" class="h">GitHub Actions</text><text x="466" y="275" text-anchor="middle" class="t">Unit tests + Docker build</text>
+ <rect x="644" y="165" width="220" height="134" rx="20" class="b"/>
+ <text x="754" y="205" text-anchor="middle" class="tiny">PACKAGING</text><text x="754" y="246" text-anchor="middle" class="h">Helm Chart</text><text x="754" y="275" text-anchor="middle" class="t">Templated manifests</text>
+ <rect x="936" y="165" width="205" height="134" rx="20" class="b"/>
+ <text x="1038" y="205" text-anchor="middle" class="tiny">DESTINATION</text><text x="1038" y="246" text-anchor="middle" class="h">Kubernetes</text><text x="1038" y="275" text-anchor="middle" class="t">Container orchestration</text>
+ <path d="M290 232H350M578 232H638M866 232H930" class="line"/>
+ <rect x="115" y="355" width="970" height="225" rx="20" class="lane"/>
+ <text x="144" y="389" class="tiny">KUBERNETES CLUSTER</text>
+ <rect x="160" y="420" width="275" height="112" rx="17" fill="#1b2758" stroke="#6777d9" stroke-width="1.5"/>
+ <text x="296" y="460" class="h" text-anchor="middle">Replica Pod 01</text><text x="296" y="487" class="t" text-anchor="middle">Flask API · /healthz</text>
+ <rect x="476" y="420" width="275" height="112" rx="17" fill="#1b2758" stroke="#6777d9" stroke-width="1.5"/>
+ <text x="613" y="460" class="h" text-anchor="middle">Replica Pod 02</text><text x="613" y="487" class="t" text-anchor="middle">Flask API · /readyz</text>
+ <rect x="796" y="420" width="245" height="112" rx="17" fill="#252746" stroke="#6a6caa" stroke-width="1.5"/>
+ <text x="918" y="462" class="h" text-anchor="middle">ClusterIP Service</text><text x="918" y="489" class="t" text-anchor="middle">Internal traffic</text>
+ <path d="M915 347V414M780 475H790" class="line"/>
+ <text x="149" y="621" class="t">Rolling updates · Health probes · Resource limits · Non-root containers</text>
+
+ </svg>

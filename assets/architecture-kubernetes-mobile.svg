@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="1444" viewBox="0 0 420 1444" role="img" aria-labelledby="diagram-title diagram-description">
+<title id="diagram-title">Code to cluster — mobile layout</title>
+<desc id="diagram-description">Automatic CI tests source code, builds a Docker image, and checks Helm templates. A separate manually started release publishes to GHCR and deploys with Helm. A Deployment controls a ReplicaSet, which maintains two Flask API pods, while a ClusterIP Service forwards application traffic to both pods.</desc>
+<defs>
+  <linearGradient id="canvas" x2="1" y2="1"><stop stop-color="#0b131e"/><stop offset="1" stop-color="#111e2e"/></linearGradient>
+  <marker id="arrow" viewBox="0 0 12 12" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L11 6L1 11Z" fill="#b7adff"/></marker>
+  <marker id="traffic-arrow" viewBox="0 0 12 12" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L11 6L1 11Z" fill="#79ead5"/></marker>
+  <style>text{font-family:Arial,Helvetica,sans-serif}.title{fill:#f5f8ff;font-weight:700;letter-spacing:-.7px}.body{fill:#bccbdd}.small{fill:#8fa6bd;font-weight:600;letter-spacing:1.2px}.node-title{fill:#f3f7ff;font-weight:700}.node-body{fill:#b6c7d9}.connection{fill:none;stroke:#b7adff;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}.traffic{stroke:#79ead5;marker-end:url(#traffic-arrow)}.control{stroke-dasharray:7 6}</style>
+</defs>
+<rect width="420" height="1444" rx="20" fill="url(#canvas)"/>
+<rect x="1" y="1" width="418" height="1442" rx="19" fill="none" stroke="#273b50"/>
+<path d="M24 1H396" stroke="#b7adff" stroke-width="2" opacity=".75"/>
+
+<text x="24" y="31" font-size="12" class="small" text-anchor="start" style="fill:#b7adff">PROJECT 02 / APPLICATION DELIVERY</text>
+<text x="24" y="65" font-size="26" class="title" text-anchor="start">Code to cluster</text>
+<text x="24" y="95" font-size="14" class="body" text-anchor="start">CI checks + a manual release workflow</text>
+<rect x="16" y="128" width="388" height="262" rx="16" fill="#0e1927" stroke="#344b61" stroke-width="1.5"/>
+<text x="36" y="156" font-size="13" class="small" text-anchor="start" style="fill:#b7adff">01 / AUTOMATIC CI</text>
+<rect x="36" y="174" width="348" height="72" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M50 175H370" stroke="#b7adff" stroke-width="2.2" opacity=".85"/>
+<rect x="50" y="189.0" width="42" height="42" rx="11" fill="#b7adff" fill-opacity=".12"/>
+<g transform="translate(57,196.0)" fill="none" stroke="#b7adff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5L1 14l8 9M19 5l8 9-8 9M17 2l-6 24"/></g>
+<text x="108" y="207.0" font-size="21" class="node-title" text-anchor="start">GitHub repository</text>
+<text x="108" y="230.0" font-size="15" class="node-body" text-anchor="start">Push / pull request</text>
+<path d="M210 246V276" class="connection"/>
+<rect x="36" y="284" width="348" height="84" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M50 285H370" stroke="#b7adff" stroke-width="2.2" opacity=".85"/>
+<rect x="50" y="305.0" width="42" height="42" rx="11" fill="#b7adff" fill-opacity=".12"/>
+<g transform="translate(57,312.0)" fill="none" stroke="#b7adff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="4"/><circle cx="22" cy="14" r="4"/><circle cx="6" cy="22" r="4"/><path d="M10 6h4v8h4M14 14v8h-4"/></g>
+<text x="108" y="312.0" font-size="20" class="node-title" text-anchor="start">GitHub Actions</text>
+<text x="108" y="335.0" font-size="15" class="node-body" text-anchor="start">Tests + Docker build</text>
+<text x="108" y="355.0" font-size="15" class="node-body" text-anchor="start">Helm lint + manifest checks</text>
+<rect x="16" y="426" width="388" height="366" rx="16" fill="#0e1927" stroke="#344b61" stroke-width="1.5"/>
+<text x="36" y="454" font-size="13" class="small" text-anchor="start" style="fill:#b7adff">02 / MANUAL RELEASE</text>
+<rect x="36" y="472" width="348" height="72" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M50 473H370" stroke="#b7adff" stroke-width="2.2" opacity=".85"/>
+<rect x="50" y="487.0" width="42" height="42" rx="11" fill="#b7adff" fill-opacity=".12"/>
+<g transform="translate(57,494.0)" fill="none" stroke="#b7adff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="4"/><circle cx="22" cy="14" r="4"/><circle cx="6" cy="22" r="4"/><path d="M10 6h4v8h4M14 14v8h-4"/></g>
+<text x="108" y="505.0" font-size="21" class="node-title" text-anchor="start">GitHub Actions</text>
+<text x="108" y="528.0" font-size="15" class="node-body" text-anchor="start">Run workflow_dispatch</text>
+<path d="M210 544V576" class="connection"/>
+<rect x="36" y="584" width="348" height="72" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M50 585H370" stroke="#b7adff" stroke-width="2.2" opacity=".85"/>
+<rect x="50" y="599.0" width="42" height="42" rx="11" fill="#b7adff" fill-opacity=".12"/>
+<g transform="translate(57,606.0)" fill="none" stroke="#b7adff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8l12-6 12 6v14l-12 5-12-5zM2 8l12 6 12-6M14 14v13M8 5l12 6"/></g>
+<text x="108" y="617.0" font-size="21" class="node-title" text-anchor="start">GHCR registry</text>
+<text x="108" y="640.0" font-size="15" class="node-body" text-anchor="start">Publish commit-tagged image</text>
+<path d="M210 656V688" class="connection"/>
+<rect x="36" y="696" width="348" height="72" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M50 697H370" stroke="#b7adff" stroke-width="2.2" opacity=".85"/>
+<rect x="50" y="711.0" width="42" height="42" rx="11" fill="#b7adff" fill-opacity=".12"/>
+<g transform="translate(57,718.0)" fill="none" stroke="#b7adff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="8"/><circle cx="14" cy="14" r="2"/><path d="M14 1v5M14 22v5M1 14h5M22 14h5M5 5l4 4M19 19l4 4M5 23l4-4M19 9l4-4"/></g>
+<text x="108" y="729.0" font-size="21" class="node-title" text-anchor="start">Helm release</text>
+<text x="108" y="752.0" font-size="15" class="node-body" text-anchor="start">Deploy versioned manifests</text>
+<rect x="16" y="836" width="388" height="556" rx="16" fill="#0e1927" stroke="#344b61" stroke-width="1.5"/>
+<text x="36" y="864" font-size="13" class="small" text-anchor="start" style="fill:#b7adff">03 / KUBERNETES CLUSTER</text>
+<path d="M210 768V812H346V892" class="connection"/>
+<rect x="36" y="900" width="348" height="76" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M50 901H370" stroke="#b7adff" stroke-width="2.2" opacity=".85"/>
+<rect x="50" y="917.0" width="42" height="42" rx="11" fill="#b7adff" fill-opacity=".12"/>
+<g transform="translate(57,924.0)" fill="none" stroke="#b7adff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="9" height="9" rx="2"/><rect x="17" y="2" width="9" height="9" rx="2"/><rect x="2" y="17" width="9" height="9" rx="2"/><rect x="17" y="17" width="9" height="9" rx="2"/></g>
+<text x="108" y="935.0" font-size="21" class="node-title" text-anchor="start">Deployment</text>
+<text x="108" y="958.0" font-size="15" class="node-body" text-anchor="start">2 replicas · rolling updates</text>
+<rect x="36" y="1024" width="348" height="76" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M50 1025H370" stroke="#b7adff" stroke-width="2.2" opacity=".85"/>
+<rect x="50" y="1041.0" width="42" height="42" rx="11" fill="#b7adff" fill-opacity=".12"/>
+<g transform="translate(57,1048.0)" fill="none" stroke="#b7adff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="9" height="9" rx="2"/><rect x="17" y="2" width="9" height="9" rx="2"/><rect x="2" y="17" width="9" height="9" rx="2"/><rect x="17" y="17" width="9" height="9" rx="2"/></g>
+<text x="108" y="1059.0" font-size="21" class="node-title" text-anchor="start">ReplicaSet</text>
+<text x="108" y="1082.0" font-size="15" class="node-body" text-anchor="start">Maintain 2 pod replicas</text>
+<path d="M210 976V1016" class="connection control"/>
+<rect x="84" y="1148" width="252" height="74" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M98 1149H322" stroke="#79ead5" stroke-width="2.2" opacity=".85"/>
+<rect x="98" y="1164.0" width="42" height="42" rx="11" fill="#79ead5" fill-opacity=".12"/>
+<g transform="translate(105,1171.0)" fill="none" stroke="#79ead5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="5"/><circle cx="4" cy="4" r="2"/><circle cx="24" cy="4" r="2"/><circle cx="4" cy="24" r="2"/><circle cx="24" cy="24" r="2"/><path d="M6 6l5 5M17 11l5-5M6 22l5-5M17 17l5 5"/></g>
+<text x="156" y="1180.0" font-size="17" class="node-title" text-anchor="start">ClusterIP Service</text>
+<text x="156" y="1203.0" font-size="14" class="node-body" text-anchor="start">Internal HTTP :80</text>
+<rect x="36" y="1270" width="166" height="80" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M50 1271H188" stroke="#79ead5" stroke-width="2.2" opacity=".85"/>
+<text x="119.0" y="1306.0" font-size="19" class="node-title" text-anchor="middle">API pod 01</text>
+<text x="119.0" y="1329.0" font-size="16" class="node-body" text-anchor="middle">:8080</text>
+<rect x="218" y="1270" width="166" height="80" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M232 1271H370" stroke="#79ead5" stroke-width="2.2" opacity=".85"/>
+<text x="301.0" y="1306.0" font-size="19" class="node-title" text-anchor="middle">API pod 02</text>
+<text x="301.0" y="1329.0" font-size="16" class="node-body" text-anchor="middle">:8080</text>
+<path d="M102 1100V1121H25V1310H28" class="connection control"/>
+<path d="M318 1100V1121H395V1310H392" class="connection control"/>
+<path d="M210 1222V1244H119V1262" class="connection traffic"/>
+<path d="M210 1222V1244H301V1262" class="connection traffic"/>
+<text x="210" y="1375" font-size="14" class="body" text-anchor="middle">Both pods: /healthz + /readyz probes</text>
+<path d="M26 1416H50" stroke="#79ead5" stroke-width="3"/>
+<text x="59" y="1421" font-size="13" class="body" text-anchor="start">Traffic</text>
+<path d="M179 1416H203" stroke="#b7adff" stroke-width="3" stroke-dasharray="5 4"/>
+<text x="212" y="1421" font-size="13" class="body" text-anchor="start">Replica control</text>
+</svg>

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="1156" viewBox="0 0 420 1156" role="img" aria-labelledby="diagram-title diagram-description">
+<title id="diagram-title">Highly available AWS infrastructure — mobile layout</title>
+<desc id="diagram-description">Internet requests enter a VPC through its internet gateway. A shared public load balancer branches to two Availability Zones. Each zone contains a public ALB interface and a private EC2 application instance. An Auto Scaling Group spans both zones.</desc>
+<defs>
+  <linearGradient id="canvas" x2="1" y2="1"><stop stop-color="#0b131e"/><stop offset="1" stop-color="#111e2e"/></linearGradient>
+  <marker id="arrow" viewBox="0 0 12 12" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L11 6L1 11Z" fill="#79ead5"/></marker>
+  <marker id="traffic-arrow" viewBox="0 0 12 12" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L11 6L1 11Z" fill="#79ead5"/></marker>
+  <style>text{font-family:Arial,Helvetica,sans-serif}.title{fill:#f5f8ff;font-weight:700;letter-spacing:-.7px}.body{fill:#bccbdd}.small{fill:#8fa6bd;font-weight:600;letter-spacing:1.2px}.node-title{fill:#f3f7ff;font-weight:700}.node-body{fill:#b6c7d9}.connection{fill:none;stroke:#79ead5;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}.traffic{stroke:#79ead5;marker-end:url(#traffic-arrow)}.control{stroke-dasharray:7 6}</style>
+</defs>
+<rect width="420" height="1156" rx="20" fill="url(#canvas)"/>
+<rect x="1" y="1" width="418" height="1154" rx="19" fill="none" stroke="#273b50"/>
+<path d="M24 1H396" stroke="#79ead5" stroke-width="2" opacity=".75"/>
+
+<text x="24" y="31" font-size="12" class="small" text-anchor="start" style="fill:#79ead5">PROJECT 01 / AWS INFRASTRUCTURE</text>
+<text x="24" y="65" font-size="26" class="title" text-anchor="start">Highly available</text>
+<text x="24" y="96" font-size="26" class="title" text-anchor="start">AWS infrastructure</text>
+<text x="24" y="126" font-size="14" class="body" text-anchor="start">Two zones. Private application instances.</text>
+<rect x="76" y="152" width="268" height="70" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M90 153H330" stroke="#79ead5" stroke-width="2.2" opacity=".85"/>
+<rect x="90" y="166.0" width="42" height="42" rx="11" fill="#79ead5" fill-opacity=".12"/>
+<g transform="translate(97,173.0)" fill="none" stroke="#79ead5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="24" height="21" rx="3"/><path d="M2 9h24M7 6h.1M11 6h.1M9 14l-3 3 3 3M19 14l3 3-3 3"/></g>
+<text x="148" y="183.5" font-size="20" class="node-title" text-anchor="start">Internet clients</text>
+<text x="148" y="206.5" font-size="15" class="node-body" text-anchor="start">Web requests</text>
+<rect x="12" y="256" width="396" height="853" rx="16" fill="#0e1927" stroke="#344b61" stroke-width="1.5" stroke-dasharray="6 7"/>
+<text x="32" y="284" font-size="13" class="small" text-anchor="start" style="fill:#79ead5">VPC / 10.20.0.0/16</text>
+<rect x="38" y="305" width="344" height="70" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M52 306H368" stroke="#79ead5" stroke-width="2.2" opacity=".85"/>
+<rect x="52" y="319.0" width="42" height="42" rx="11" fill="#79ead5" fill-opacity=".12"/>
+<g transform="translate(59,326.0)" fill="none" stroke="#79ead5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="11"/><ellipse cx="14" cy="14" rx="5" ry="11"/><path d="M3 14h22M6 7h16M6 21h16"/></g>
+<text x="110" y="337.0" font-size="21" class="node-title" text-anchor="start">Internet gateway</text>
+<text x="110" y="360.0" font-size="15" class="node-body" text-anchor="start">VPC ingress</text>
+<rect x="38" y="425" width="344" height="80" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M52 426H368" stroke="#79ead5" stroke-width="2.2" opacity=".85"/>
+<rect x="52" y="444.0" width="42" height="42" rx="11" fill="#79ead5" fill-opacity=".12"/>
+<g transform="translate(59,451.0)" fill="none" stroke="#79ead5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="2" width="8" height="6" rx="1"/><path d="M14 8v6M5 14h18M5 14v5M23 14v5"/><rect x="1" y="19" width="8" height="6" rx="1"/><rect x="19" y="19" width="8" height="6" rx="1"/></g>
+<text x="110" y="460.5" font-size="18" class="node-title" text-anchor="start">Application Load Balancer</text>
+<text x="110" y="483.5" font-size="15" class="node-body" text-anchor="start">Public HTTP listener</text>
+<path d="M210 222V297" class="connection"/>
+<text x="250" y="247" font-size="13" class="body" text-anchor="middle" style="fill:#79ead5" font-weight="600">HTTP :80</text>
+<path d="M210 375V417" class="connection"/>
+<rect x="30" y="554" width="350" height="222" rx="16" fill="#0e1927" stroke="#344b61" stroke-width="1.5"/>
+<text x="50" y="582" font-size="13" class="small" text-anchor="start" style="fill:#79ead5">AVAILABILITY ZONE A</text>
+<rect x="48" y="602" width="314" height="65" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M62 603H348" stroke="#79ead5" stroke-width="2.2" opacity=".85"/>
+<rect x="62" y="613.5" width="42" height="42" rx="11" fill="#79ead5" fill-opacity=".12"/>
+<g transform="translate(69,620.5)" fill="none" stroke="#79ead5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="2" width="8" height="6" rx="1"/><path d="M14 8v6M5 14h18M5 14v5M23 14v5"/><rect x="1" y="19" width="8" height="6" rx="1"/><rect x="19" y="19" width="8" height="6" rx="1"/></g>
+<text x="120" y="630.5" font-size="19" class="node-title" text-anchor="start">ALB interface</text>
+<text x="120" y="653.5" font-size="15" class="node-body" text-anchor="start">Public subnet A</text>
+<rect x="48" y="694" width="314" height="65" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M62 695H348" stroke="#79ead5" stroke-width="2.2" opacity=".85"/>
+<rect x="62" y="705.5" width="42" height="42" rx="11" fill="#79ead5" fill-opacity=".12"/>
+<g transform="translate(69,712.5)" fill="none" stroke="#79ead5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="22" height="9" rx="2"/><rect x="3" y="16" width="22" height="9" rx="2"/><path d="M8 7.5h.1M8 20.5h.1M13 7.5h7M13 20.5h7"/></g>
+<text x="120" y="722.5" font-size="19" class="node-title" text-anchor="start">EC2 application</text>
+<text x="120" y="745.5" font-size="15" class="node-body" text-anchor="start">Private subnet A · :8080</text>
+<path d="M205 667V686" class="connection"/>
+<rect x="30" y="820" width="350" height="222" rx="16" fill="#0e1927" stroke="#344b61" stroke-width="1.5"/>
+<text x="50" y="848" font-size="13" class="small" text-anchor="start" style="fill:#79ead5">AVAILABILITY ZONE B</text>
+<rect x="48" y="868" width="314" height="65" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M62 869H348" stroke="#79ead5" stroke-width="2.2" opacity=".85"/>
+<rect x="62" y="879.5" width="42" height="42" rx="11" fill="#79ead5" fill-opacity=".12"/>
+<g transform="translate(69,886.5)" fill="none" stroke="#79ead5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="2" width="8" height="6" rx="1"/><path d="M14 8v6M5 14h18M5 14v5M23 14v5"/><rect x="1" y="19" width="8" height="6" rx="1"/><rect x="19" y="19" width="8" height="6" rx="1"/></g>
+<text x="120" y="896.5" font-size="19" class="node-title" text-anchor="start">ALB interface</text>
+<text x="120" y="919.5" font-size="15" class="node-body" text-anchor="start">Public subnet B</text>
+<rect x="48" y="960" width="314" height="65" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M62 961H348" stroke="#79ead5" stroke-width="2.2" opacity=".85"/>
+<rect x="62" y="971.5" width="42" height="42" rx="11" fill="#79ead5" fill-opacity=".12"/>
+<g transform="translate(69,978.5)" fill="none" stroke="#79ead5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="22" height="9" rx="2"/><rect x="3" y="16" width="22" height="9" rx="2"/><path d="M8 7.5h.1M8 20.5h.1M13 7.5h7M13 20.5h7"/></g>
+<text x="120" y="988.5" font-size="19" class="node-title" text-anchor="start">EC2 application</text>
+<text x="120" y="1011.5" font-size="15" class="node-body" text-anchor="start">Private subnet B · :8080</text>
+<path d="M205 933V952" class="connection"/>
+<path d="M210 505V530H320V594" class="connection"/>
+<path d="M210 505V530H397V900.5H370" class="connection"/>
+<rect x="30" y="1060" width="350" height="34" rx="9" fill="#132e31" stroke="#315e61" stroke-width="1.5"/>
+<text x="205" y="1082" font-size="16" class="body" text-anchor="middle" style="fill:#a8efde">Auto Scaling Group · minimum 2</text>
+<text x="210" y="1136" font-size="14" class="body" text-anchor="middle">ELB health checks · CloudWatch monitoring</text>
+</svg>

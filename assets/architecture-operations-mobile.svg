@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="1330" viewBox="0 0 420 1330" role="img" aria-labelledby="diagram-title diagram-description">
+<title id="diagram-title">Detect, decide, respond — mobile layout</title>
+<desc id="diagram-description">EC2 metric to CloudWatch alarm to EventBridge to Lambda. Lambda validates the event and target; DynamoDB rejects duplicates. Only an opted-in, tagged, running instance may reboot. New eligible incidents produce an SNS notification.</desc>
+<defs>
+  <linearGradient id="canvas" x2="1" y2="1"><stop stop-color="#0b131e"/><stop offset="1" stop-color="#111e2e"/></linearGradient>
+  <marker id="arrow" viewBox="0 0 12 12" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L11 6L1 11Z" fill="#ffc58d"/></marker>
+  <marker id="traffic-arrow" viewBox="0 0 12 12" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L11 6L1 11Z" fill="#79ead5"/></marker>
+  <style>text{font-family:Arial,Helvetica,sans-serif}.title{fill:#f5f8ff;font-weight:700;letter-spacing:-.7px}.body{fill:#bccbdd}.small{fill:#8fa6bd;font-weight:600;letter-spacing:1.2px}.node-title{fill:#f3f7ff;font-weight:700}.node-body{fill:#b6c7d9}.connection{fill:none;stroke:#ffc58d;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}.traffic{stroke:#79ead5;marker-end:url(#traffic-arrow)}.control{stroke-dasharray:7 6}</style>
+</defs>
+<rect width="420" height="1330" rx="20" fill="url(#canvas)"/>
+<rect x="1" y="1" width="418" height="1328" rx="19" fill="none" stroke="#273b50"/>
+<path d="M24 1H396" stroke="#ffc58d" stroke-width="2" opacity=".75"/>
+
+<text x="24" y="31" font-size="12" class="small" text-anchor="start" style="fill:#ffc58d">PROJECT 03 / CLOUD OPERATIONS</text>
+<text x="24" y="65" font-size="26" class="title" text-anchor="start">Detect. Decide. Respond.</text>
+<text x="24" y="95" font-size="14" class="body" text-anchor="start">One alarm. Controlled recovery.</text>
+<rect x="36" y="136" width="348" height="76" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M50 137H370" stroke="#ffc58d" stroke-width="2.2" opacity=".85"/>
+<rect x="50" y="153.0" width="42" height="42" rx="11" fill="#ffc58d" fill-opacity=".12"/>
+<g transform="translate(57,160.0)" fill="none" stroke="#ffc58d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 23h24M4 19v-7M11 19V6M18 19V9M25 19V2"/></g>
+<text x="108" y="171.0" font-size="21" class="node-title" text-anchor="start">EC2 status metric</text>
+<text x="108" y="194.0" font-size="15" class="node-body" text-anchor="start">Instance status check</text>
+<path d="M210 212V246" class="connection"/>
+<rect x="36" y="254" width="348" height="76" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M50 255H370" stroke="#ffc58d" stroke-width="2.2" opacity=".85"/>
+<rect x="50" y="271.0" width="42" height="42" rx="11" fill="#ffc58d" fill-opacity=".12"/>
+<g transform="translate(57,278.0)" fill="none" stroke="#ffc58d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20h18l-3-4V9a6 6 0 00-12 0v7zM11 24h6M14 1v2"/></g>
+<text x="108" y="289.0" font-size="21" class="node-title" text-anchor="start">CloudWatch alarm</text>
+<text x="108" y="312.0" font-size="15" class="node-body" text-anchor="start">State changes to ALARM</text>
+<path d="M210 330V364" class="connection"/>
+<rect x="36" y="372" width="348" height="76" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M50 373H370" stroke="#ffc58d" stroke-width="2.2" opacity=".85"/>
+<rect x="50" y="389.0" width="42" height="42" rx="11" fill="#ffc58d" fill-opacity=".12"/>
+<g transform="translate(57,396.0)" fill="none" stroke="#ffc58d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5h8v7h8V5h8M2 23h8v-7h8v7h8M10 14h8"/></g>
+<text x="108" y="407.0" font-size="21" class="node-title" text-anchor="start">EventBridge</text>
+<text x="108" y="430.0" font-size="15" class="node-body" text-anchor="start">Filter the exact alarm</text>
+<path d="M210 448V482" class="connection"/>
+<rect x="36" y="490" width="348" height="76" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M50 491H370" stroke="#ffc58d" stroke-width="2.2" opacity=".85"/>
+<rect x="50" y="507.0" width="42" height="42" rx="11" fill="#ffc58d" fill-opacity=".12"/>
+<g transform="translate(57,514.0)" fill="none" stroke="#ffc58d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l11 22h-7L10 9M12 14L5 25H0"/></g>
+<text x="108" y="525.0" font-size="21" class="node-title" text-anchor="start">Lambda</text>
+<text x="108" y="548.0" font-size="15" class="node-body" text-anchor="start">Validate event + target</text>
+<path d="M210 566V600" class="connection"/>
+<rect x="36" y="608" width="348" height="88" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M50 609H370" stroke="#ffc58d" stroke-width="2.2" opacity=".85"/>
+<rect x="50" y="631.0" width="42" height="42" rx="11" fill="#ffc58d" fill-opacity=".12"/>
+<g transform="translate(57,638.0)" fill="none" stroke="#ffc58d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="14" cy="5" rx="11" ry="4"/><path d="M3 5v18c0 5 22 5 22 0V5M3 14c0 5 22 5 22 0"/></g>
+<text x="108" y="638.5" font-size="21" class="node-title" text-anchor="start">DynamoDB</text>
+<text x="108" y="661.5" font-size="15" class="node-body" text-anchor="start">Record the event ID</text>
+<text x="108" y="681.5" font-size="15" class="node-body" text-anchor="start">Duplicate IDs exit here</text>
+<rect x="36" y="754" width="348" height="104" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M50 755H370" stroke="#ffc58d" stroke-width="2.2" opacity=".85"/>
+<rect x="50" y="785.0" width="42" height="42" rx="11" fill="#ffc58d" fill-opacity=".12"/>
+<g transform="translate(57,792.0)" fill="none" stroke="#ffc58d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="12" width="20" height="14" rx="3"/><path d="M8 12V8a6 6 0 0112 0v4M14 18v3"/></g>
+<text x="108" y="793.5" font-size="23" class="node-title" text-anchor="start">Reboot allowed?</text>
+<text x="108" y="816.5" font-size="15" class="node-body" text-anchor="start">Enabled + authorized tag</text>
+<text x="108" y="836.5" font-size="15" class="node-body" text-anchor="start">Instance must be running</text>
+<path d="M210 696V746" class="connection"/>
+<text x="266" y="726" font-size="14" class="body" text-anchor="middle" style="fill:#ffc58d" font-weight="600">New event</text>
+<rect x="28" y="936" width="168" height="76" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M42 937H182" stroke="#ffc58d" stroke-width="2.2" opacity=".85"/>
+<text x="112.0" y="970.0" font-size="19" class="node-title" text-anchor="middle">Notify only</text>
+<text x="112.0" y="993.0" font-size="15" class="node-body" text-anchor="middle">No reboot</text>
+<rect x="224" y="936" width="168" height="76" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M238 937H378" stroke="#ffc58d" stroke-width="2.2" opacity=".85"/>
+<text x="308.0" y="970.0" font-size="19" class="node-title" text-anchor="middle">EC2 reboot</text>
+<text x="308.0" y="993.0" font-size="15" class="node-body" text-anchor="middle">Authorized</text>
+<path d="M164 858V893H112V928" class="connection"/>
+<path d="M256 858V893H308V928" class="connection"/>
+<text x="109" y="881" font-size="14" class="body" text-anchor="middle" style="fill:#ffc58d" font-weight="600">NO</text>
+<text x="313" y="881" font-size="14" class="body" text-anchor="middle" style="fill:#ffc58d" font-weight="600">YES</text>
+<rect x="50" y="1096" width="320" height="80" rx="13" fill="#152335" stroke="#3a536c" stroke-width="1.5"/>
+<path d="M64 1097H356" stroke="#79ead5" stroke-width="2.2" opacity=".85"/>
+<rect x="64" y="1115.0" width="42" height="42" rx="11" fill="#79ead5" fill-opacity=".12"/>
+<g transform="translate(71,1122.0)" fill="none" stroke="#79ead5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h22v17H12l-7 6v-6H3zM8 9h12M8 14h8"/></g>
+<text x="122" y="1133.0" font-size="21" class="node-title" text-anchor="start">SNS notification</text>
+<text x="122" y="1156.0" font-size="14" class="node-body" text-anchor="start">Incident + recovery decision</text>
+<path d="M112 1012V1054H136V1088" class="connection"/>
+<path d="M308 1012V1054H284V1088" class="connection"/>
+<rect x="24" y="1210" width="372" height="92" rx="12" fill="#20252a" stroke="#6d5944" stroke-width="1.5"/>
+<text x="44" y="1237" font-size="13" class="small" text-anchor="start" style="fill:#ffc58d">DEFAULT: NOTIFY ONLY</text>
+<text x="44" y="1262" font-size="16" class="body" text-anchor="start">Reboot needs explicit opt-in + a tag.</text>
+<text x="44" y="1284" font-size="15" class="body" text-anchor="start">IAM access is scoped to one instance.</text>
+</svg>
